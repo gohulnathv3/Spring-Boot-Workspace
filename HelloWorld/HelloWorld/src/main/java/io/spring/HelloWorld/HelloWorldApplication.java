@@ -16,7 +16,7 @@ public class HelloWorldApplication {
 
 	@RequestMapping("/hello")
 	public String sayHello(@RequestParam(value = "myName", defaultValue = "World")String name){
-		return String.format("Hello %s", name);
+		return String.format("Hello %s", name+"! Welcome to your first Spring Boot Application");
 	}
 
 }
