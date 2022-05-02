@@ -11,13 +11,20 @@ import java.util.List;
 //here we declare the business logic. so this is called business service class.
 public class TopicService {
 
-    private List<Topic> topics = Arrays.asList(
+    private List<Topic> topics = new ArrayList<>( Arrays.asList(
             new Topic("Spring","Spring Framework", "Spring Framework Description"),
             new Topic("java","Java Framework", "Java Framework Description"),
-            new Topic("JavaScript","JavaScript Framework", "JavaScript Framework Description"));
+            new Topic("JavaScript","JavaScript Framework", "JavaScript Framework Description")));
 
     public List<Topic> getAllTopics(){
         return topics;
     }
 
+    public Topic getTopic(String id) {
+         return  topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();
+    }
+
+    public void addTopic(Topic topic) {
+        topics.add(topic);
+    }
 }
