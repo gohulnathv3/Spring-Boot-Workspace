@@ -1,6 +1,13 @@
 package io.spring.courseapidata.topic;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+// it is used to know this should be the data to be saved. To tell jpa to this an entity class.
+@Entity
 public class Topic {
+
+    @Id
     private String id;
     private String name;
     private String description;
