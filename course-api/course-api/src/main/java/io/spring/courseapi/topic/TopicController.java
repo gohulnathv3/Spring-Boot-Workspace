@@ -33,8 +33,18 @@ public class TopicController{
 //    request body is used to convert the json body and convert into the instances and add it in topics
     public void addTopic(@RequestBody Topic topic){
         topicService.addTopic(topic);
-
     }
 
+//    to update topic
+    @RequestMapping(method = RequestMethod.PUT, value = "/topics/{id}")
+    public void updateTopic(@RequestBody Topic topic, @PathVariable String id){
+        topicService.updateTopic(topic, id);
+    }
+
+//    to delete topic
+    @RequestMapping(method = RequestMethod.DELETE, value = "/topics/{id}")
+    public void deleteTopic(@PathVariable String id){
+        topicService.deleteTopic(id);
+    }
 
 }
