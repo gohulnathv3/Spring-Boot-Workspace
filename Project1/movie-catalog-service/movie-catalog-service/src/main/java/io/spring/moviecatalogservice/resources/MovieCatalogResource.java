@@ -26,6 +26,8 @@ public class MovieCatalogResource {
         // get all rated movie IDs
 
 
+        // Adding webclient to make api calls
+
 
 
 
