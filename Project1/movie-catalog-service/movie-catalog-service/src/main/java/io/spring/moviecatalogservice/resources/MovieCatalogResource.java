@@ -24,8 +24,6 @@ public class MovieCatalogResource {
 
     @Autowired
     private WebClient.Builder webClientBuilder;
-    private CatalogItem movie;
-
     @RequestMapping("/{userId}")
     public List<CatalogItem> getCatalog(@PathVariable("userId")String userId){
         // get all rated movie IDs
@@ -47,7 +45,7 @@ public class MovieCatalogResource {
 
             // Movie movie =  restTemplate.getForObject("http://localhost:8082/movies/123" + rating.getMovieId(), Movie.class);
 
-            webClientBuilder.build()
+            Movie movie = webClientBuilder.build()
                     .get()
                     .uri("http://localhost:8082/movies/123" + rating.getMovieId())
                     .retrieve()
