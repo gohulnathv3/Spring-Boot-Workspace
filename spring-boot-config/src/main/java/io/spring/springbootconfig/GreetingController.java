@@ -17,8 +17,8 @@ public class GreetingController {
 
    @GetMapping("/greeting")
     public String greeting(){
-        return "Hello"; // Usual declaration
-//       return greetingMessage; // Returning values from property file
+//        return "Hello"; // Usual declaration
+       return greetingMessage; // Returning values from property file
 
     }
 }
