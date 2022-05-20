@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class GreetingController {
 
 
+    //Injecting value from property file
+    @Value("${my.greetings}")
+   
+
 
    @GetMapping("/greeting")
     public String greeting(){
