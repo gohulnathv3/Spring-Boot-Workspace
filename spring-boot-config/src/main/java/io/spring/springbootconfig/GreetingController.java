@@ -11,7 +11,8 @@ public class GreetingController {
 
     //Injecting value from property file
     @Value("${my.greetings}")
-   
+    // Declaring member variable to restore the value from property file
+    private String greetingMessage;
 
 
    @GetMapping("/greeting")
