@@ -10,9 +10,12 @@ public class GreetingController {
 
 
     //Injecting value from property file
-    @Value("${my.greetings}")
+    @Value("${my.greetings: default value}")
     // Declaring member variable to restore the value from property file
     private String greetingMessage;
+
+    @Value("some static message")
+    private String staticMessage;
 
 
    @GetMapping("/greeting")
