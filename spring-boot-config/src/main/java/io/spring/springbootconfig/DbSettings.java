@@ -10,6 +10,8 @@ public class DbSettings {
     private String host;
     private int port;
 
+    public DbSettings(){}
+
     public String getConnection() {
         return connection;
     }
