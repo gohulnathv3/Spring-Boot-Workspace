@@ -1,6 +1,7 @@
 package io.spring.springbootconfig;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,6 +27,9 @@ public class GreetingController {
     // Declaring key value pairs in prop file
     @Value("#{${DbValues}}")
     private Map<String, String> dbValues;
+
+    @Autowired
+    private DbSettings dbSettings; // get all those values in one shot.
 
 
    @GetMapping("/greeting")
