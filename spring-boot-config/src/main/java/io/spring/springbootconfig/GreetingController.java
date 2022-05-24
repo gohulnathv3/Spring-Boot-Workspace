@@ -35,7 +35,7 @@ public class GreetingController {
    @GetMapping("/greeting")
     public String greeting(){
 //        return "Hello"; // Usual declaration
-       return greetingMessage+ staticMessage + myList + dbValues + dbSettings.getConnection(); // Returning values from property file
+       return greetingMessage+ staticMessage + myList + dbSettings.getConnection() + dbSettings.getHost(); // Returning values from property file
 
     }
 }
