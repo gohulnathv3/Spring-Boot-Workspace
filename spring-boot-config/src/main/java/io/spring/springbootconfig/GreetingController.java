@@ -44,7 +44,8 @@ public class GreetingController {
     }
 
     @GetMapping("/envdetails")
-    public String envDetails(){
+    public String envDetails(){ 
        return env.toString(); // to get the environment values
+
     }
 }
