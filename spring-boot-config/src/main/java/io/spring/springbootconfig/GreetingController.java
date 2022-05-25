@@ -3,6 +3,7 @@ package io.spring.springbootconfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,11 +32,20 @@ public class GreetingController {
     @Autowired
     private DbSettings dbSettings; // get all those values in one shot.
 
+    @Autowired
+    private Environment env;  // Autowiring environment obj
+
 
    @GetMapping("/greeting")
     public String greeting(){
 //        return "Hello"; // Usual declaration
-       return greetingMessage+ staticMessage + myList + dbSettings.getConnection() + dbSettings.getHost(); // Returning values from property file
+       return  dbSettings.getConnection() +" , "+ dbSettings.getHost() +" , "+ dbSettings.getPort(); // Returning values from property file
+
+    }
+
+    @GetMapping("/envdetails")
+    public String envDetails(){ 
+       return env.toString(); // to get the environment values
 
     }
 }
