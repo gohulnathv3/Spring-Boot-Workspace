@@ -31,6 +31,9 @@ public class GreetingController {
     @Autowired
     private DbSettings dbSettings; // get all those values in one shot.
 
+    @Value("Welcome to @Value static message")
+    private String Hello;
+
 
    @GetMapping("/greeting")
     public String greeting(){
