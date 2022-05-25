@@ -38,4 +38,9 @@ public class GreetingController {
        return greetingMessage+ staticMessage + myList + dbSettings.getConnection() + dbSettings.getHost(); // Returning values from property file
 
     }
+
+    @GetMapping("/hello")
+    public String hello(){
+       return Hello;
+    }
 }
