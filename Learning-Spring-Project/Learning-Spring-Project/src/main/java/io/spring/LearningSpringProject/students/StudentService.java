@@ -19,9 +19,13 @@ public class StudentService {
     ));
 
     // to get all students
-    private List<Student> getAllStudents() {
+    List<Student> getAllStudents() {
         students.addAll(studentRepository.findAll());
         return students;
+    }
+
+    public void addStudent(Student student){
+        studentRepository.save(student);
     }
 
 
