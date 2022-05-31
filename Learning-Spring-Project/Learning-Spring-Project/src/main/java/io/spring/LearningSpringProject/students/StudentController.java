@@ -24,10 +24,15 @@ public class StudentController {
     // to add student data
 
     @RequestMapping(method = RequestMethod.POST, value = "/students")
-    public void addStudent(@RequestBody Student student){
+    public String addStudent(@RequestBody Student student){
         studentService.addStudent(student);
+        return "Added student name is : "+student.getName();
     }
 
-
-
+    @RequestMapping(method = RequestMethod.PUT, value = "/students/{name}")
+    // to update student data
+    public String updateStudent(@RequestBody Student student, @PathVariable String name){
+        studentService.updateStudent(student,name);
+        return "Student details update successfully";
+    }
 }
