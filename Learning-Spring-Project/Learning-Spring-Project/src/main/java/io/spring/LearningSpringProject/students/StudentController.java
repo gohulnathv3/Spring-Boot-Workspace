@@ -33,6 +33,14 @@ public class StudentController {
     // to update student data
     public String updateStudent(@RequestBody Student student, @PathVariable String name){
         studentService.updateStudent(student,name);
-        return "Student details update successfully";
+        return "Student details updated successfully";
     }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/students/{name}")
+    // to delete student data
+    public String deleteStudent(@PathVariable String name){
+        studentService.deleteStudent(name);
+        return "Deleted successfully";
+    }
+
 }
