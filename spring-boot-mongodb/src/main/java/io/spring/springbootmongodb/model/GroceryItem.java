@@ -8,12 +8,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 // if the collection doesn't exist, Mongodb will create it.
 public class GroceryItem {
     @Id // The mongodb's document primary key_id annotation.
-    private String id;
+    private int id;
     private String name;
     private int quantity;
     private String category;
 
-    public GroceryItem(String id, String name, int quantity, String category) {
+    public GroceryItem(int id, String name, int quantity, String category) {
         super();
         this.id = id;
         this.name = name;
@@ -21,11 +21,11 @@ public class GroceryItem {
         this.category = category;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
