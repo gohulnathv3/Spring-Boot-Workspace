@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -13,6 +14,9 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
+    @Autowired
+    private StudentRepository studentRepository;
+
 
     // to get all students list
 
@@ -20,6 +24,13 @@ public class StudentController {
     public List<Student> getAllStudents(){
         return studentService.getAllStudents();
     }
+
+    // to get student detail
+    @GetMapping("/students/{name}")
+    public Optional<Student> getStudent(@PathVariable String name){
+        return studentRepository.findById(name);
+    }
+
 
     // to add student data
 
