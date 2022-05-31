@@ -34,5 +34,10 @@ public class StudentService {
         studentRepository.save(student);
     }
 
+    // to delete data
+    public void deleteStudent(String name){
+        studentRepository.deleteById(name);
+    }
+
 
 }
