@@ -8,7 +8,7 @@ import java.util.List;
 
 //it tells that it's a controller class
 @RestController
-public class TopicController{
+public class    TopicController{
 
 //    it is used to declare dependencies
     @Autowired
