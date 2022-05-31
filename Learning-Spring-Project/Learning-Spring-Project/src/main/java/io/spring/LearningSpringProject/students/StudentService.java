@@ -2,6 +2,8 @@ package io.spring.LearningSpringProject.students;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,11 +22,15 @@ public class StudentService {
 
     // to get all students
     List<Student> getAllStudents() {
-        students.addAll(studentRepository.findAll());
-        return students;
+        return studentRepository.findAll();
     }
 
     public void addStudent(Student student){
+        studentRepository.save(student);
+    }
+
+    // to update student details
+    public void updateStudent(Student student, String name){
         studentRepository.save(student);
     }
 
