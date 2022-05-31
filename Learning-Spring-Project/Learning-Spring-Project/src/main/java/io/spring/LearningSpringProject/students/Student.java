@@ -3,7 +3,7 @@ package io.spring.LearningSpringProject.students;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("StudentRepo")
+@Document(collection = "StudentRepo")
 public class Student {
 
     @Id
