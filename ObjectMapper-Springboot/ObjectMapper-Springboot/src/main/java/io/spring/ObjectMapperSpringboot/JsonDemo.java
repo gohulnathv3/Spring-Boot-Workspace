@@ -11,7 +11,7 @@ public class JsonDemo {
         Employee employee = new Employee("Gohul", "Application Developer", "Hyderabad", "Information Technology");
 
        try {
-           objectMapper.writeValue(new File("target/emp.json"), employee);
+           objectMapper.writeValue(new File("D:\\Learnings\\Spring\\programs\\ObjectMapper-Springboot\\ObjectMapper-Springboot\\target\\emp.json"), employee);
        }catch (final Exception e){
            e.printStackTrace();
        }
