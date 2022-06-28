@@ -13,6 +13,9 @@ public class GroceryItem {
     private int quantity;
     private String category;
 
+    public GroceryItem() {
+    }
+
     public GroceryItem(int id, String name, int quantity, String category) {
         super();
         this.id = id;
