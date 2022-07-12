@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
+@Slf4j
 
 public class DepartmentService {
 
@@ -17,6 +18,12 @@ public class DepartmentService {
 
 
     public Department saveDepartment(@RequestBody  Department department) {
+        log.info("Inside saveDepartment method of DepartmentService");
         return departmentRepository.save(department);
+    }
+
+    public Department findDepartmentById(Long departmentId) {
+        log.info("Inside findDepartmentById method of DepartmentService");
+        return departmentRepository.findByDepartmentId(departmentId);
     }
 }
