@@ -1,9 +1,11 @@
 package com.gohul.restfulwebservices.user;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 @Component
@@ -45,4 +47,20 @@ public class UserDaoService {
         }
         return null;
     }
+
+    // delete the user
+
+
+    public User deleteByUsedId(int id){
+        Iterator<User> iterator = users.iterator();
+        while (iterator.hasNext()){
+            User user = iterator.next();
+            if (user.getId() == id){
+                iterator.remove();
+                return user;
+            }
+        }
+        return null;
+    }
+
 }
