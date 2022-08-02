@@ -1,6 +1,6 @@
-package com.gohul.restfulwebservices.controller;
+package com.gohul.restfulwebservices.HelloWorld;
 
-import com.gohul.restfulwebservices.service.HelloWorldBean;
+import com.gohul.restfulwebservices.HelloWorld.HelloWorldBean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
