@@ -3,6 +3,7 @@ package com.gohul.restfulwebservices.filtering;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class SomeBean {
+    @JsonIgnore
     private String field1;
     private String field2;
     @JsonIgnore
